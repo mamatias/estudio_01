@@ -16,3 +16,9 @@ def customNormalize(in_np_arr):
     min_val = min(in_np_arr)
     max_val = max(in_np_arr)
     return (in_np_arr-min_val)/(max_val-min_val)
+
+def one_hot_enconde(lbls, n_classes = 10):
+    tr = zeros((len(lbls), n_classes))
+    for idx, val in enumerate(lbls):
+        tr[idx][val] = 1
+    return tr
